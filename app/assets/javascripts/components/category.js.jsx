@@ -1,4 +1,5 @@
 const Categories = React.createClass({
+
   propTypes: {
     name: React.PropTypes.string
   },
