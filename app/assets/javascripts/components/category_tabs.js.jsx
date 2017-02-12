@@ -1,13 +1,22 @@
 const CategoryTabs = React.createClass({
   getInitialState() {
     return {
-      key: 1
+      key: 'Waste'
     };
   },
 
   handleSelect(key) {
-    this.setState({key});
+    this.setState({
+      key: key.target.innerHTML,
+    });
   },
+  //
+  // onActiveTab() {
+  //   // event.preventDefault();
+  // //   this.props.handleSelect();
+  // }
+
+
 
   // set selected category to 'class = "active"' | https://codepen.io/amwill/pen/qOMyEp
   render() {
@@ -17,7 +26,7 @@ const CategoryTabs = React.createClass({
           {this.props.categories.map(
             (category) =>
               <li role="presentation" key={category.id}>
-                <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">
+                <a href="#profile" className={this.state.key} aria-controls="profile" role="tab" data-toggle="tab" onClick={this.handleSelect} >
                   {category.name}
                 </a>
               </li>
