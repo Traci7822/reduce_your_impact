@@ -1,7 +1,15 @@
-@categories = React.createClass
-  # render: ->
-  #   React.DOM.div
-  #     className: 'categories'
-  #     React.DOM.h2
-  #       className: 'name'
-  #       'Categories'
+var Categories = React.createClass({
+
+  render: function() {
+    categories = this.props.categories.map( function(category) {
+      return (
+      <div>
+        <tr>
+          <td>{category.name}</td>
+        </tr>
+      </div>
+      );
+      });
+
+  }
+  })
