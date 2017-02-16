@@ -5,3 +5,20 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Category.create([
+  {name: 'Waste'},
+  {name: 'Environment'},
+  {name: 'Food'},
+  {name: 'Home'}
+])
+
+Topic.create([
+  {name: 'Reusables', category: Category.find_by(name: 'Waste')},
+  {name: 'Recyclables', category: Category.find_by(name: 'Waste')}
+])
+
+Component.create([
+  {name: 'Plastic Bottles', topic: Topic.find_by(name: 'Recyclables'), note: 'Recycling one plastic bottle save enough energy to power a 60 Watt equivalent high efficiency LED bulb for 42 hours'},
+  
+])
