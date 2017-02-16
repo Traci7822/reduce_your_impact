@@ -4,7 +4,6 @@ const CategoryTabs = React.createClass({
     return {
       key: 'Waste',
       active: false,
-      // active: false,
     };
   },
 
@@ -14,13 +13,7 @@ const CategoryTabs = React.createClass({
       active: true,
     });
   },
-  //
-  // onActiveTab() {
-  //   // event.preventDefault();
-  // //   this.props.handleSelect();
-  // }
 
-  // set selected category to 'class = "active"' | https://codepen.io/amwill/pen/qOMyEp
   render() {
     return (
       <div>

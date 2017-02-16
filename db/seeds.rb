@@ -19,6 +19,5 @@ Topic.create([
 ])
 
 Component.create([
-  {name: 'Plastic Bottles', topic: Topic.find_by(name: 'Recyclables'), note: 'Recycling one plastic bottle save enough energy to power a 60 Watt equivalent high efficiency LED bulb for 42 hours'},
-  
+  {name: 'Plastic Bottles', topic: Topic.find_by(name: 'Recyclables'), notes: 'Recycling one plastic bottle save enough energy to power a 60 Watt equivalent high efficiency LED bulb for 42 hours'},
 ])
