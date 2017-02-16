@@ -15,7 +15,10 @@ Category.create([
 
 Topic.create([
   {name: 'Reusables', category: Category.find_by(name: 'Waste')},
-  {name: 'Recyclables', category: Category.find_by(name: 'Waste')}
+  {name: 'Recyclables', category: Category.find_by(name: 'Waste')},
+  {name: 'Agriculture', category: Category.find_by(name: 'Environment')},
+  {name: 'Lighting', category: Category.find_by(name: 'Home')},
+  {name: 'Compost', category: Category.find_by(name: 'Food')},
 ])
 
 Component.create([

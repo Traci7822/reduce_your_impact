@@ -2,17 +2,25 @@ const CategoryTabs = React.createClass({
 
   getInitialState() {
     return {
-      key: 'Waste',
+      name: 'Waste',
       active: false,
+      topics: []
     };
   },
 
-  handleSelect(key) {
+
+  handleSelect(event) {
+    const topics = this.getTopics;
+    // need to write getTopics to get topics by category id. Use actions folder with index.js file?
     this.setState({
-      key: key.target.innerHTML,
+      id: event.target.id,
+      name: event.target.innerHTML,
       active: true,
+      topics: topics,
     });
   },
+
+
 
   render() {
     return (
@@ -22,7 +30,7 @@ const CategoryTabs = React.createClass({
             {this.props.categories.map(
               (category) =>
                 <li role="presentation" key={category.id}>
-                  <a href="#profile" className={this.state.key} aria-controls="profile" role="tab" data-toggle="tab" onClick={this.handleSelect} >
+                  <a href="#profile" id={category.id} className={this.state.key} aria-controls="profile" role="tab" data-toggle="tab" onClick={this.handleSelect} >
                     {category.name}
                   </a>
                 </li>
@@ -31,7 +39,8 @@ const CategoryTabs = React.createClass({
 
             </div>
             <div>
-              {this.state.active ? `${this.state.key} + active` : null}
+              {this.state.active ? `${this.state.name} + active` : null}
+              {this.state.topics}
             </div>
       </div>
 
